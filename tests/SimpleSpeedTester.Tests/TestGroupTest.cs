@@ -14,14 +14,28 @@ namespace SimpleSpeedTester.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void TestNullTestGroupName()
         {
-            new TestGroup(null);
+#if XUNIT
+            Xunit.Assert.Throws<ArgumentException>(() =>
+            {
+#endif
+                new TestGroup(null);
+#if XUNIT
+            });
+#endif
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestEmptyTestGroupName()
         {
-            new TestGroup(string.Empty);
+#if XUNIT
+            Xunit.Assert.Throws<ArgumentException>(() =>
+            {
+#endif
+                new TestGroup(string.Empty);
+#if XUNIT
+            });
+#endif
         }
 
         [Test]

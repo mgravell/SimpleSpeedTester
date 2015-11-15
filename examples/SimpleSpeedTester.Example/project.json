@@ -1,0 +1,33 @@
+﻿{
+  "commands": {
+    "run": "SimpleSpeedTester.Example"
+  },
+  "version": "1.0",
+  "compilationOptions": { "define": [ "COREFX" ] },
+  "dependencies": {
+    "SimpleSpeedTester": {
+      "target": "project",
+      "version": "1.1.1"
+    }
+  },
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Runtime": "4.0.10.0"
+      },
+      "dependencies": {
+      }
+    },
+    "dnxcore50": {
+      "dependencies": {
+        "System.Runtime": "4.0.21-beta-23409",
+        "System.Runtime.Extensions": "4.0.11-beta-23409",
+        "System.Collections": "4.0.11-beta-23409",
+        "System.Collections.Concurrent": "4.0.11-beta-23409",
+        "System.Console": "4.0.0-beta-23225",
+        "System.Linq": "4.0.1-beta-23409",
+        "System.Threading.Thread": "4.0.0-beta-23409"
+      }
+    }
+  }
+}

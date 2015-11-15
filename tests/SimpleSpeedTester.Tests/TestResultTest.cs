@@ -14,14 +14,28 @@ namespace SimpleSpeedTester.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestNullTestAction()
         {
-            new TestResult(null, new List<TestOutcome>());
+#if XUNIT
+            Xunit.Assert.Throws<ArgumentNullException>(() =>
+            {
+#endif
+                new TestResult(null, new List<TestOutcome>());
+#if XUNIT
+            });
+#endif
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestNullTestActionOutcomes()
         {
-            new TestResult(GetTest(DoNothingAction, 1), null);
+#if XUNIT
+            Xunit.Assert.Throws<ArgumentNullException>(() =>
+            {
+#endif
+                new TestResult(GetTest(DoNothingAction, 1), null);
+#if XUNIT
+            });
+#endif
         }
 
         [Test]

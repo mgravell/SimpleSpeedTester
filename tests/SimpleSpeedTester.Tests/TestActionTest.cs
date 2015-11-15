@@ -11,38 +11,72 @@ namespace SimpleSpeedTester.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void TestNullActionName()
         {
-            new Test(null, DoNothingAction, 1, GetTestGroup());
+#if XUNIT
+            Xunit.Assert.Throws<ArgumentException>(() =>
+            {
+#endif
+                new Test(null, DoNothingAction, 1, GetTestGroup());
+#if XUNIT
+            });
+#endif
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestEmptyActionName()
         {
-            new Test(string.Empty, DoNothingAction, 1, GetTestGroup());
+#if XUNIT
+            Xunit.Assert.Throws<ArgumentException>(() =>
+            {
+#endif
+                new Test(string.Empty, DoNothingAction, 1, GetTestGroup());
+#if XUNIT
+            });
+#endif
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestNullActionDelegate()
         {
-            new Test(TestName, null, 1, GetTestGroup());
+#if XUNIT
+            Xunit.Assert.Throws<ArgumentNullException>(() =>
+            {
+#endif
+                new Test(TestName, null, 1, GetTestGroup());
+#if XUNIT
+            });
+#endif
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TestInvalidExecCount()
         {
-            new Test(TestName, DoNothingAction, 0, GetTestGroup());
+#if XUNIT
+            Xunit.Assert.Throws<ArgumentOutOfRangeException>(() => {
+#endif
+                new Test(TestName, DoNothingAction, 0, GetTestGroup());
+#if XUNIT
+            });
+#endif
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestNullTestGroup()
         {
-            new Test(TestName, DoNothingAction, 1, null);
-        }
+#if XUNIT
+            Xunit.Assert.Throws<ArgumentNullException>(() =>
+            {
+#endif
+                new Test(TestName, DoNothingAction, 1, null);
+#if XUNIT
+            });
+#endif
+            }
 
-        [Test]
+            [Test]
         public void TestExecuteWithNoException()
         {
             var testAction = new Test(TestName, SleepForJustOverOneSecondAction, 1, GetTestGroup());

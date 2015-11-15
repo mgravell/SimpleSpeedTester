@@ -1,0 +1,30 @@
+﻿{
+  "version": "1.1.1",
+  "summary": "A simple framework to help benchmark test your .Net code.",
+  "description": "SimpleSpeedTester is a simple, easy to use framework that helps you speed test your .Net code by taking care some of the orchestration for you.\n\nIt should NOT be confused with a performance profiler such as JetBrains' dotTrace or RedGate's ANTS profiler.\n\nThe SimpleSpeedTester is intended for one thing and one thing only – help you speed test a specific piece of code/method over multiple runs, collate the results and work out the average for you so you only have to focus on producing the code you want to test.\n\nWhere it might be useful is when you want to compare the performance of two similar components/methods in terms of speed, for instance, the serialization and deserialization speed of DataContractJsonSerializer vs JavaScriptSerializer.",
+  "authors": [ "Yan Cui" ],
+  "owners": [ "theburningmonk" ],
+  "tags": [ "C#","csharp","testing","benchmark","performance" ],
+  "releaseNotes": "Support for core-clr",
+  "iconUrl": "https://raw.github.com/theburningmonk/SimpleSpeedTester/master/nuget/sst-logo.png",
+  "requireLicenseAcceptance": false,
+  "projectUrl": "https://github.com/theburningmonk/SimpleSpeedTester",
+  "licenseUrl": "https://github.com/theburningmonk/SimpleSpeedTester/blob/master/LICENSE",
+  "copyright": "Copyright 2013",
+  "frameworks": {
+    "dnx451": {
+    },
+    "net40": {
+    },
+    "dnxcore50": {
+      "compilationOptions": { "define": [ "COREFX" ] },
+      "dependencies": {
+        "System.Runtime": "4.0.21-beta-23409",
+        "System.Runtime.Extensions": "4.0.11-beta-23409",
+        "System.Collections": "4.0.11-beta-23409",
+        "System.Collections.Concurrent": "4.0.11-beta-23409",
+        "System.Linq": "4.0.1-beta-23409"
+      }
+    }
+  }
+}

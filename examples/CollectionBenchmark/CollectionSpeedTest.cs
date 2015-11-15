@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
 
+using System.Linq;
+#if !NOIMMUTABLE
+using System.Collections.Immutable;
+#endif
+#if !NOFSHARP
 using Microsoft.FSharp.Collections;
+#endif
 
 using SimpleSpeedTester.Core;
 using SimpleSpeedTester.Interfaces;
@@ -25,11 +29,15 @@ namespace SimpleSpeedTester.Example
             results.Add("List<T> with value type", AddItemsWithListT("List<T> with value type", 42));
             results.Add("List<T> with ref type", AddItemsWithListT("List<T> with ref type", "42"));
 
+#if !NOIMMUTABLE
             results.Add("ImmutableList<T> with value type", AddItemsWithImmutableListT("ImmutableList<T> with value type", 42));
             results.Add("ImmutableList<T> with ref type", AddItemsWithImmutableListT("ImmutableList<T> with ref type", "42"));
+#endif
 
+#if !NOFSHARP
             results.Add("FSharpList<T> with value type", AddItemsWithFSharpListT("FSharpList<T> with value type", 42));
             results.Add("FSharpList<T> with ref type", AddItemsWithFSharpListT("FSharpList<T> with ref type", "42"));
+#endif
 
             return results;
         }
@@ -59,6 +67,7 @@ namespace SimpleSpeedTester.Example
             return Tuple.Create(addResultSummary, removeResultSummary);
         }
 
+#if !NOIMMUTABLE
         private static Tuple<ITestResultSummary, ITestResultSummary> AddItemsWithImmutableListT<T>(string testGroupName, T item)
         {
             var list = ImmutableList<T>.Empty;
@@ -83,6 +92,9 @@ namespace SimpleSpeedTester.Example
             
             return Tuple.Create(addResultSummary, removeResultSummary);
         }
+#endif
+
+#if !NOFSHARP
 
         private static Tuple<ITestResultSummary, ITestResultSummary> AddItemsWithFSharpListT<T>(string testGroupName, T item)
         {
@@ -108,5 +120,6 @@ namespace SimpleSpeedTester.Example
             
             return Tuple.Create(addResultSummary, removeResultSummary);
         }
+#endif
     }
 }

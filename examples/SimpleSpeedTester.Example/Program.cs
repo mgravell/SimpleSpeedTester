@@ -20,7 +20,11 @@ namespace SimpleSpeedTester.Example
             Example4();
 
             Console.WriteLine("all done...");
+#if COREFX
+            Console.ReadLine();
+#else
             Console.ReadKey();
+#endif
         }
 
         private static void Example1()
