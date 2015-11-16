@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24606.1
+VisualStudioVersion = 14.0.24709.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E8ED0C5C-C3B1-4A75-B4F6-7933657B347F}"
 	ProjectSection(SolutionItems) = preProject
@@ -34,6 +34,11 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CollectionBenchmark", "examples\CollectionBenchmark\CollectionBenchmark.xproj", "{76798EF2-5814-43E8-9E6A-182B5C0473CC}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SimpleSpeedTester.Example", "examples\SimpleSpeedTester.Example\SimpleSpeedTester.Example.xproj", "{1DD7CC9E-1E5A-4860-B746-60BB31E52520}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{79800A3A-60DB-41BF-B6EA-1424CDE39F13}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.Config = NuGet.Config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
