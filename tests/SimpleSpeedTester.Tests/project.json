@@ -18,11 +18,11 @@
     "dnxcore50": {
       "compilationOptions": { "define": [ "COREFX" ] },
       "dependencies": {
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Runtime.Extensions": "4.0.11-beta-23516",
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Collections.Concurrent": "4.0.11-beta-23516",
-        "System.Linq": "4.0.1-beta-23516"
+        "System.Runtime": "4.0.21-*",
+        "System.Runtime.Extensions": "4.0.11-*",
+        "System.Collections": "4.0.11-*",
+        "System.Collections.Concurrent": "4.0.11-*",
+        "System.Linq": "4.0.1-*"
       }
     }
   }
